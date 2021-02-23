@@ -1,7 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
 
 /* Loader */
-.lds-ring {
+.lds-ring, .global-errors {
   display: block;
   position: fixed;
   z-index: 1;
@@ -11,9 +11,9 @@
   background-color: rgb(255, 255, 255); /* Fallback color */
   background-color: rgba(255, 255, 255, 0.8); /* Black w/ opacity */
 }
-.lds-ring.hidden {
+.lds-ring.hidden, .global-errors.hidden {
   display: none;
-} 
+}
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -44,4 +44,10 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+/* Global errors */
+.global-errors {
+  padding: 20% 10%;
 }

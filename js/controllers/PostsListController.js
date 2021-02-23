@@ -14,15 +14,16 @@ export default class PostsListController extends BaseController {
     }
 
     async loadPosts() {
-        this.loader.showLoading();
+        this.publish(this.events.START_LOADING, {});
         try {
             const spots = await dataService.getSpots();
             this.render(spots);
         } catch (error) {
             console.error(error);
+            this.publish(this.events.ERROR, error);
         } finally {
             // this always runs when it works or it dosent
-            this.loader.hideLoading();
+            this.publish(this.events.FINISH_LOADING, {});
         }
     }
 

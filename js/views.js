@@ -6,7 +6,7 @@ export const spotView = (spot) => {
     </div>
      <div class="ad-info">
        <div class="ad-main-info">
-        <p>${spot.username}</p>
+        <p>${spot.message}</p>
       </div>
       <div class="ad-state">
          <p>Compra o venta</p>
@@ -32,4 +32,16 @@ export const spotView = (spot) => {
         </div>
         `;
   };
+
+  export const errorView = (errorMessage) => {
+    return `<article class="message is-danger">
+      <div class="message-header">
+        <p>Error</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body">
+        ${errorMessage}
+      </div>
+    </article>`
+  }
 
