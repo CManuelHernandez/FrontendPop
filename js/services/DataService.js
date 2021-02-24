@@ -6,7 +6,7 @@ const BASE_URL = 'http://127.0.0.1:8000';
 export default {
 
     getSpots: async function() {
-        const url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
+        const url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;
         const response = await fetch(url);
         if (response.ok) {
             const data = response.json();
@@ -14,5 +14,26 @@ export default {
         } else {
             throw new Error(`HTTP Error: ${response.status}`)
         }
+    },
+
+    post: async function(url, postData) {
+        const config = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(postData)  // make the users object to a JSON
+        };
+        const response = await fetch(url, config);
+        const data = await response.json();  // server response anyway, OK or ERROR.
+        if (response.ok) {
+            return data;
+        } else {
+            throw new Error(data.message || JSON.stringify(data));
+        }
+    },
+
+    registerUser: async function(user) {
+        const url = `${BASE_URL}/auth/register`;
+        return await this.post(url, user);
     }
+
 };

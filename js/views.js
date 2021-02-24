@@ -34,7 +34,7 @@ export const spotView = (spot) => {
   };
 
   export const errorView = (errorMessage) => {
-    return `<article class="message is-danger">
+    return `<div class="message is-danger">
       <div class="message-header">
         <p>Error</p>
         <button class="delete" aria-label="delete"></button>
@@ -42,6 +42,6 @@ export const spotView = (spot) => {
       <div class="message-body">
         ${errorMessage}
       </div>
-    </article>`
+    </div>`
   }
 
