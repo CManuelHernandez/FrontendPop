@@ -8,6 +8,12 @@ export default class RegisterFormController extends BaseController {
         this.attachEventListener();
     }
 
+    async makePost (user) {
+        await dataService.registerUser(user);
+        alert('Usuario creado con éxito!');
+        window.location.href = '/login.html';  // redirect user to login
+    }
+
     attachEventListener() {      
         this.element.addEventListener('submit', async (event) => {
             event.preventDefault(); 
@@ -17,9 +23,7 @@ export default class RegisterFormController extends BaseController {
             };
             this.publish(this.events.START_LOADING);
             try {
-                const data = await dataService.registerUser(user);
-                alert('User created successfully');
-                window.location.href = '/login.html'; // redirect user to login
+                await this.makePost(user);
             } catch(error) {
                 this.publish(this.events.ERROR, error);
             } finally {
@@ -38,7 +42,7 @@ export default class RegisterFormController extends BaseController {
                 } else {
                     input.classList.remove('is-success');
                     input.classList.add('is-danger');
-                }
+                }               
                 // Check form to enable or disable the button
                 if (this.element.checkValidity()) {
                     button.removeAttribute('disabled');

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontendPop - New Spot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+    <div class="global-errors hidden"></div>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <h1 class="title">Creating a new Spot</h1>
+                <form>
+                    <input name="productName" class="input name" type="text" placeholder="Product Name" required>
+                    <label>Add a Description</label><br>
+                    <textarea name="description" class="textarea" placeholder="Add a description to your Ad (Optional)"></textarea>
+                    <label>Add a Picture (optional)</label><br>
+                    <input type="file" name="file" accept="image/*">
+                    <input name="price" class="input" type="number" placeholder="Product Price" required>
+                    <button class="button sell is-primary is-pulled-right" disabled>Vender</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/new-spot.js"></script>
+</body>
+</html>

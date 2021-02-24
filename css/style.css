@@ -96,3 +96,9 @@ a {
   border-bottom-right-radius: 0.5rem;
 }
 
+/* new spot or login */
+.new-spot {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}

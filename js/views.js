@@ -6,23 +6,16 @@ export const spotView = (spot) => {
     </div>
      <div class="ad-info">
        <div class="ad-main-info">
-        <p>${spot.message}</p>
+        <p>${spot.productName}</p>
       </div>
       <div class="ad-state">
-         <p>Compra o venta</p>
+         <p>${spot.status}</p>
          </div>
          <div class=ad-decription>
-           <p>"Lorem ipsum dolor sit amet, 
-             consectetur adipiscing elit, 
-             sed do eiusmod tempor incididunt 
-             ut labore et dolore magna aliqua. 
-             Ut enim ad minim veniam, quis 
-             nostrud exercitation ullamco 
-             laboris nisi ut aliquip ex ea 
-             commodo consequat.</p>
+           <p>${spot.description}</p>
          </div>
       <div class="ad-price">
-        <p>Precio €</p>
+        <p><p>${spot.price}</p> €</p>
       </div>
         <div class="ad-tags">
        <p>tags</p>

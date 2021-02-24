@@ -1,6 +1,7 @@
 import PostsListController from './controllers/PostsListController.js';
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
+import NewSpotOrLoginController from './controllers/NewSpotOrLoginController.js'
 
 window.addEventListener("DOMContentLoaded", async (event) => {
   const loader = document.querySelector(".lds-ring");
@@ -12,5 +13,8 @@ window.addEventListener("DOMContentLoaded", async (event) => {
 
   const errorsElement = document.querySelector('.global-errors');
   const errorController = new ErrorController(errorsElement);
+
+  const newSpotButtons = document.querySelector('.new-spot');
+  new NewSpotOrLoginController(newSpotButtons);
 
 });
