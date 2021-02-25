@@ -14,7 +14,7 @@ export default {
             return data.map(spot => {
                 return {
                     productName: spot.productName,
-                    description: spot.description,
+                    description: spot.description.replace(/(<([^>]+)>)/gi, ""),
                     price: spot.price,
                     status: spot.status,
                     date: spot.createdAt || spot.updatedAt,
