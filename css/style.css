@@ -87,6 +87,13 @@ a {
   border-top-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+.ad-info button {
+  background-color: crimson;
+  color: aliceblue;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-bottom-right-radius: 2rem;
+}
 
 /* new spot or login */
 .new-spot {

@@ -7,6 +7,7 @@ const TOKEN_KEY = 'token';
 export default {
 
     getSpots: async function() {
+        const currentUser = await this.getUser();
         const url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;
         const response = await fetch(url);
         if (response.ok) {
@@ -14,13 +15,15 @@ export default {
             return data.map(spot => {
                 const user = spot.user || {};
                 return {
+                    id: spot.id,
                     productName: spot.productName,
                     description: spot.description.replace(/(<([^>]+)>)/gi, ""),
                     price: spot.price,
                     status: spot.status,
                     date: spot.createdAt || spot.updatedAt,
                     author: user.username || 'Desconocido',
-                    image: spot.image || null
+                    image: spot.image || null,
+                    canBeDeleted: currentUser ? currentUser.userId === spot.userId : false
                 }
             });
         } else {
@@ -29,8 +32,20 @@ export default {
     },
 
     post: async function(url, postData, json=true) {
+        return await this.request('POST', url, postData, json);
+    },
+
+    delete: async function(url) {
+        return await this.request('DELETE', url, {});
+    },
+
+    put: async function(url, putData, json=true) {
+        return await this.request('PUT', url, putData, json);
+    },
+
+    request: async function(method, url, postData, json=true) {
         const config = {
-            method: 'POST',
+            method: method,
             headers: {},
             body: null
         };
@@ -92,6 +107,27 @@ export default {
         const response = await this.post(url, form, false);
         console.log('uploadImage', response);
         return response.path || null;
+    },
+
+    getUser: async function() {
+        try {
+            const token = await this.getToken();
+            const tokenParts = token.split('.');
+            if (tokenParts.length !== 3) {
+                return null;
+            }
+            const payload = tokenParts[1]; // cogemos el payload, codificado en base64
+            const jsonStr = atob(payload); // descodificamos el base64
+            const { userId, username } = JSON.parse(jsonStr); // parseamos el JSON del token descodificado
+            return { userId, username };
+        } catch (error) {
+            return null;
+        }
+    },
+
+    deleteSpot: async function(spot) {
+        const url = `${BASE_URL}/api/spots/${spot.id}`;
+        return await this.delete(url);
     }
 
 };
