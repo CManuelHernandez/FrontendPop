@@ -50,14 +50,18 @@ export default class NewSpotFormController extends BaseController {
             });
           });
 
-        // controlamos cuando se envía el formulario
+        // control when the form is submitted
         this.element.addEventListener('submit', async event => {
             event.preventDefault();
             const spot = {
                 productName: this.element.elements.productName.value,
                 description: this.element.elements.description.value,
                 price: this.element.elements.price.value,
-                status: 'Compra'
+                status: 'Compra',
+                image: null
+            }
+            if (this.element.elements.file.files.length > 0) {
+                spot.image = this.element.elements.file.files[0];
             }
             this.publish(this.events.START_LOADING);
             try {

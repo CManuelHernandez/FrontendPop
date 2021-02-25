@@ -12,13 +12,15 @@ export default {
         if (response.ok) {
             const data = await response.json();
             return data.map(spot => {
+                const user = spot.user || {};
                 return {
                     productName: spot.productName,
                     description: spot.description.replace(/(<([^>]+)>)/gi, ""),
                     price: spot.price,
                     status: spot.status,
                     date: spot.createdAt || spot.updatedAt,
-                    author: spot.user.username
+                    author: user.username || 'Desconocido',
+                    image: spot.image || null
                 }
             });
         } else {
@@ -26,12 +28,18 @@ export default {
         }
     },
 
-    post: async function(url, postData) {
+    post: async function(url, postData, json=true) {
         const config = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(postData)  // make the users object to a JSON
+            headers: {},
+            body: null
         };
+        if (json) {
+            config.headers['Content-Type'] = 'application/json';
+            config.body = JSON.stringify(postData);  // make the users object to a JSON
+        } else {
+            config.body = postData;
+        }
         const token = await this.getToken();
         if (token) { 
             config.headers['Authorization'] = `Bearer ${token}`;
@@ -70,7 +78,20 @@ export default {
 
     saveSpot: async function(spot) {
         const url = `${BASE_URL}/api/spots`;
+        if (spot.image) {
+            const imageURL = await this.uploadImage(spot.image);
+            spot.image = imageURL;
+        }
         return await this.post(url, spot);
+    },
+
+    uploadImage: async function(image) {
+        const form = new FormData();
+        form.append('file', image);
+        const url = `${BASE_URL}/upload`;
+        const response = await this.post(url, form, false);
+        console.log('uploadImage', response);
+        return response.path || null;
     }
 
 };

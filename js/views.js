@@ -1,8 +1,12 @@
 export const spotView = (spot) => {
+  let imgHTML = '<img src="../img/noimg.png" alt="No image"></img>';
+  if (spot.image) {
+    imgHTML = `<img src="${spot.image}" alt="Placeholder image">`;
+  }
     return `  
     <div class="ad-data">
     <div class="ad-image">
-     <img src="https://bulma.io/images/placeholders/640x480.png" alt="Placeholder image">
+    ${imgHTML}
     </div>
      <div class="ad-info">
        <div class="ad-main-info">
@@ -20,7 +24,7 @@ export const spotView = (spot) => {
         </div>
         `;
   };
-
+// 
   export const errorView = (errorMessage) => {
     return `<div class="message is-danger">
       <div class="message-header">
