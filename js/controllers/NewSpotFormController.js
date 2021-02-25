@@ -13,7 +13,7 @@ export default class NewSpotFormController extends BaseController {
     async checkIfUserIsLogged() {
         const userIsLogged = await dataService.isUserLogged();
         if (!userIsLogged) {
-            window.location.href = '/login.html';
+            window.location.href = '/login.html?next=/new-spot.html';;
         } else {
             this.publish(this.events.FINISH_LOADING);
         }

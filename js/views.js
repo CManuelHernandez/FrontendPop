@@ -15,13 +15,8 @@ export const spotView = (spot) => {
            <p>${spot.description}</p>
          </div>
       <div class="ad-price">
-        <p><p>${spot.price}</p> €</p>
-      </div>
-        <div class="ad-tags">
-       <p>tags</p>
-       </div>
+        <p>${spot.price} €</p> 
     </div>
-
         </div>
         `;
   };
