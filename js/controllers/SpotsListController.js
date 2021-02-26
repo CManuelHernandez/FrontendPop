@@ -17,19 +17,7 @@ export default class PostsListController extends BaseController {
                 event.preventDefault();
                 window.location.href = 'detail-spot.html?id=' + spot.id;
                 });
-                
-                const deleteButton = article.querySelector('button');
-                if (deleteButton) {
-                    deleteButton.addEventListener('click', async event => {
-                        event.preventDefault();
-                        const deleteConfirmed = confirm('¿Estas seguro de borrar este anuncio?');
-                        if (deleteConfirmed) {
-                            await dataService.deleteSpot(spot);
-                            article.remove(); // immediately delete the spot so that the user does not see it
-                            await this.loadSpots();  // reload the list of spots after deleting
-                        }
-                    });
-                }
+                              
                 this.element.appendChild(article);
             } 
         } catch (error) {

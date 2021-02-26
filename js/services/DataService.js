@@ -8,25 +8,12 @@ export default {
 
     getSpots: async function() {
         const currentUser = await this.getUser();
-        let url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;
-        
+        let url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;       
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            return data.map(spot => {
-                const user = spot.user || {};
-                return {
-                    id: spot.id,
-                    productName: spot.productName,
-                    description: spot.description.replace(/(<([^>]+)>)/gi, ""),
-                    price: spot.price,
-                    status: spot.status,
-                    date: spot.createdAt || spot.updatedAt,
-                    author: user.username || 'Desconocido',
-                    image: spot.image || null,
-                    canBeDeleted: currentUser ? currentUser.userId === spot.userId : false
-                }               
-            });
+            console.log(data);
+            return data;
         } else {
             throw new Error(`HTTP Error: ${response.status}`)
         }
@@ -41,14 +28,15 @@ export default {
 
         if (queryParamsParts.length == 2) {
             url += '/' + productId;
+            url += '?_expand=user';
         }
+
+        console.log(url);
         const response = await fetch(url);
-
-
         if (response.ok) {
             const data = await response.json();
             const currentUser = await this.getUser();
-            
+            console.log(data);
             return await this.spotData(data, currentUser);
 
         } else {
@@ -166,6 +154,7 @@ export default {
             date: data.createdAt || data.updatedAt,
             author: data.username || 'Desconocido',
             image: data.image || null,
+            user: data.user,
             canBeDeleted: currentUser ? currentUser.userId === data.userId : false
         };
     }
