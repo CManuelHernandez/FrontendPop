@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Product page</title>
+    </head>
+    <body>
+        <div class="lds-ring"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+
+        <div class="global-errors hidden"></div>
+        <nav class="nav-menu">           
+            <a href="/index.html">Index</a>
+        </nav>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <img src="/img/logoFrontendPop.png" width="112" height="28">
+                <div class="new-spot">
+                    <a href="/new-spot.html" class="button is-primary is-hidden new-spot-button">Create a new Spot</a> 
+                    <a href="/index.html" class="button is-danger is-hidden sesion-button">Close Session</a> 
+                    <span class="is-hidden login-register-buttons">
+                        <a href="/login.html" class="button is-primary">Login</a>
+                        <a href="/register.html" class="button is-primary">Register</a>
+                    </span>
+                </div> 
+            </div>    
+          </nav>
+
+            <h1 class="title">FrontendPop</h1>
+
+            <div class="container">
+                <main class="posts-list"></main>
+            </div>
+
+        <script type="module" src="js/detail-spot.js"></script>
+    </body>
+</html>

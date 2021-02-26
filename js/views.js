@@ -43,4 +43,3 @@ export const spotView = (spot) => {
       </div>
     </div>`
   }
-

@@ -8,7 +8,8 @@ export default {
 
     getSpots: async function() {
         const currentUser = await this.getUser();
-        const url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;
+        let url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;
+        
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
@@ -24,10 +25,35 @@ export default {
                     author: user.username || 'Desconocido',
                     image: spot.image || null,
                     canBeDeleted: currentUser ? currentUser.userId === spot.userId : false
-                }
+                }               
             });
         } else {
             throw new Error(`HTTP Error: ${response.status}`)
+        }
+    },
+
+    getSpot: async function () {
+        let url = `${BASE_URL}/api/spots`;
+
+        const queryParams = window.location.href.replace('?', ' ');
+        const queryParamsParts = queryParams.split('=');
+        const productId = queryParamsParts[1];
+
+        if (queryParamsParts.length == 2) {
+            url += '/' + productId;
+        }
+        const response = await fetch(url);
+
+
+        if (response.ok) {
+            const data = await response.json();
+            const currentUser = await this.getUser();
+            
+            return await this.spotData(data, currentUser);
+
+        } else {
+            console.log(error);
+            throw new Error(`HTTP Error: ${response.status}`);
         }
     },
 
@@ -128,6 +154,20 @@ export default {
     deleteSpot: async function(spot) {
         const url = `${BASE_URL}/api/spots/${spot.id}`;
         return await this.delete(url);
+    },
+
+    spotData: async function(data, currentUser){
+        return {
+            id: data.id,
+            productName: data.productName,
+            description: data.description.replace(/(<([^>]+)>)/gi, ""),
+            price: data.price,
+            status: data.status,
+            date: data.createdAt || data.updatedAt,
+            author: data.username || 'Desconocido',
+            image: data.image || null,
+            canBeDeleted: currentUser ? currentUser.userId === data.userId : false
+        };
     }
 
 };
