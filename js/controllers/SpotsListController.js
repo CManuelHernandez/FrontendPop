@@ -1,6 +1,6 @@
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
-import { spotView } from '../views.js';
+import { spotView, noSpotsView } from '../views.js';
 
 export default class PostsListController extends BaseController {
 
@@ -8,18 +8,25 @@ export default class PostsListController extends BaseController {
         this.element.innerHTML = ''; // delete any spot that you can see on the screen
         this.publish(this.events.START_LOADING, {});
         try {
-            for (const spot of spots) {
-                const article = document.createElement('div');
-                article.classList.add('ad');
-                article.innerHTML = spotView(spot);
-            
-                article.addEventListener('click', async event => {
-                event.preventDefault();
-                window.location.href = 'detail-spot.html?id=' + spot.id;
-                });
-                              
-                this.element.appendChild(article);
-            } 
+            console.log(spots);
+            if (spots.length < 1) {
+                const container = document.querySelector('.container');
+                container.innerHTML = noSpotsView();
+                
+            }else {
+                for (const spot of spots) {
+                    const article = document.createElement('div');
+                    article.classList.add('ad');
+                    article.innerHTML = spotView(spot);
+                
+                    article.addEventListener('click', async event => {
+                    event.preventDefault();
+                    window.location.href = 'detail-spot.html?id=' + spot.id;
+                    });
+                                  
+                    this.element.appendChild(article);
+                } 
+            }          
         } catch (error) {
             console.error('Ha ocurrido un error', error);
             this.publish(this.events.ERROR, error);

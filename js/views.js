@@ -58,10 +58,24 @@ export const feedbackView = () => {
     </div>
     <div class="card-content">
       <div class="content has-text-centered">
-        <p><strong>Spot Successfully deleted</strong></p>  
-        <p>You will be redirected to the main page</p>.
+        <p><strong>Operation success</strong></p>
       </div>
     </div>
+  </div>
+  </div>
+  </div>`
+}
+
+export const noSpotsView = () => {
+  return `<div class="columns is-mobile is-centered mt-4">
+  <div class="column is-three-quarters">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+      <img src="../img/nospot.jpg">
+      </figure>
+    </div>
+    <div class="card-content">
   </div>
   </div>
   </div>`

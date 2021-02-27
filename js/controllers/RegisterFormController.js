@@ -1,5 +1,6 @@
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
+import { feedbackView } from '../views.js';
 
 export default class RegisterFormController extends BaseController {
 
@@ -10,8 +11,14 @@ export default class RegisterFormController extends BaseController {
 
     async makePost (user) {
         await dataService.registerUser(user);
-        alert('Usuario creado con éxito!');
-        window.location.href = '/login.html';  // redirect user to login
+        const page = document.querySelector('.container');
+        const pageFeedback = document.createElement('div');
+        pageFeedback.classList.add('container');
+        pageFeedback.innerHTML = feedbackView();
+        page.replaceWith(pageFeedback);
+        setTimeout(function(){ 
+        window.location = 'login.html'; 
+        }, 4000);
     }
 
     attachEventListener() {      
