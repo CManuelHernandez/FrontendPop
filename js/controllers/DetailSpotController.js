@@ -1,6 +1,6 @@
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
-import { spotView } from '../views.js';
+import { spotView, feedbackView } from '../views.js';
 
 export default class DetailSpotController extends BaseController {
     constructor(element) {
@@ -22,7 +22,11 @@ export default class DetailSpotController extends BaseController {
                     if (deleteConfirmed) {
                         await dataService.deleteSpot(spot);
                         article.remove(); // immediately delete the spot so that the user does not see it
-                        await this.loadSpots();  // reload the list of spots after deleting
+                        const container = document.querySelector('.container');
+                        container.innerHTML = feedbackView();
+                        setTimeout(function(){ 
+                            window.location = 'index.html'; 
+                        }, 5000);
                     }
                 });
             }

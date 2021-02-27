@@ -4,30 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrontendPop - New Spot</title>
+    <title>FrontendPop - New Spot for Sale</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
     <div class="global-errors hidden"></div>
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img src="/img/logoFrontendPop.png" width="112" height="28">
+            <div class="basic">
+                <a href="/index.html" class="button is-primary">Back to main page</a> 
+            </div> 
+        </div>    
+    </nav>
 
     <div class="container">
         <div class="columns">
             <div class="column is-two-thirds">
                 <h1 class="title">Creating a new Spot</h1>
-                <form>
+                <h2 class="subtitle">For Selling Purposes</h2>
+                <form class="sale"> 
                     <input name="productName" class="input name" type="text" placeholder="Product Name" required>
                     <label>Add a Description</label><br>
                     <textarea name="description" class="textarea" placeholder="Add a description to your Ad (Optional)"></textarea>
                     <label>Add a Picture (optional)</label><br>
                     <input type="file" name="file" accept="image/*">
                     <input name="price" class="input" type="number" placeholder="Product Price" required>
-                    <button class="button sell is-primary is-pulled-right" disabled>Vender</button>
+                    <button class="button sell is-primary is-pulled-right" disabled>Put on sale</button>
                 </form>
             </div>
         </div>
     </div>
-    <script type="module" src="js/new-spot.js"></script>
+    <script type="module" src="js/new-spotSale.js"></script>
 </body>
 </html>

@@ -12,7 +12,6 @@ export default {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            console.log(data);
             return data;
         } else {
             throw new Error(`HTTP Error: ${response.status}`)
@@ -36,7 +35,6 @@ export default {
         if (response.ok) {
             const data = await response.json();
             const currentUser = await this.getUser();
-            console.log(data);
             return await this.spotData(data, currentUser);
 
         } else {

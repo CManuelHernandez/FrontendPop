@@ -1,7 +1,7 @@
 import BaseController from "./BaseController.js";
 import dataService from "../services/DataService.js";
 
-export default class NewSpotFormController extends BaseController {
+export default class NewSpotSaleFormController extends BaseController {
 
     constructor(element) {
         super(element);
@@ -13,7 +13,7 @@ export default class NewSpotFormController extends BaseController {
     async checkIfUserIsLogged() {
         const userIsLogged = await dataService.isUserLogged();
         if (!userIsLogged) {
-            window.location.href = '/login.html?next=/new-spot.html';;
+            window.location.href = '/login.html?next=/new-spot-sale.html';
         } else {
             this.publish(this.events.FINISH_LOADING);
         }
@@ -57,7 +57,7 @@ export default class NewSpotFormController extends BaseController {
                 productName: this.element.elements.productName.value,
                 description: this.element.elements.description.value,
                 price: this.element.elements.price.value,
-                status: 'Compra',
+                status: 'On sale',
                 image: null
             }
             if (this.element.elements.file.files.length > 0) {

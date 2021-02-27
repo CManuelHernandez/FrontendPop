@@ -1,6 +1,6 @@
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
-import NewSpotFormController from './controllers/NewSpotFormController.js';
+import NewSpotPurchaseFormController from './controllers/NewSpotPurchaseFormController.js'
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -10,6 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const errorsElement = document.querySelector('.global-errors');
     const errorController = new ErrorController(errorsElement);
 
-    const formElement = document.querySelector('form');
-    const newSpotController = new NewSpotFormController(formElement);
+    const formPurchaseElement = document.querySelector('.purchase');
+    const newSpotPurchaseController = new NewSpotPurchaseFormController(formPurchaseElement);
 });

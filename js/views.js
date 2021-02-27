@@ -46,3 +46,23 @@ export const spotView = (spot) => {
       </div>
     </div>`
   }
+
+export const feedbackView = () => {
+  return `<div class="columns is-mobile is-centered">
+  <div class="column is-two-fifths">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="../img/ok.jpg">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="content has-text-centered">
+        <p><strong>Spot Successfully deleted</strong></p>  
+        <p>You will be redirected to the main page</p>.
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>`
+}

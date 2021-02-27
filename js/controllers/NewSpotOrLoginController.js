@@ -12,8 +12,10 @@ export default class NewSpotOrLoginController extends BaseController {
     async checkIfUserIsLogged() {
         const usesIsLogged = await dataService.isUserLogged();
         if (usesIsLogged) {
-            const newSpotButton = this.element.querySelector('.new-spot-button');
-            newSpotButton.classList.remove('is-hidden');            
+            const newSpotSaleButton = this.element.querySelector('.new-spotSell-button');
+            newSpotSaleButton.classList.remove('is-hidden');
+            const newSpotPurchaseButton = this.element.querySelector('.new-spotPurchase-button');
+            newSpotPurchaseButton.classList.remove('is-hidden');             
             const sesionButton = this.element.querySelector('.sesion-button');
             sesionButton.classList.remove('is-hidden');
             sesionButton.addEventListener('click', (event) => {
