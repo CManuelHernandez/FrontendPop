@@ -80,3 +80,14 @@ export const noSpotsView = () => {
   </div>
   </div>`
 }
+
+export const noSpotView = () => {
+  return `<div class="card-content">
+  <div class="columns is-mobile is-centered">
+    <div class="content">
+      <p>Spot not found</p>
+      <a href="/index.html"><button class="button is-success">Back to start</button></a>
+   </div>
+ </div>
+</div>` 
+}
