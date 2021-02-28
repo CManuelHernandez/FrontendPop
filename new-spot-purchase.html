@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FrontendPop - New Spot for Purchase</title>
+    <link rel="icon" type="image/png" href="img/fp.ico">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fixforms.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/error.css">
 </head>
@@ -22,7 +24,7 @@
     </nav>
 
     <div class="container">
-        <div class="columns m-4">
+        <div class="columns is-mobile is-centered m-4">
             <div class="column is-two-thirds">
                 <h1 class="title">Creating a New Spot</h1>
                 <h2 class="subtitle">For Purchase Purposes</h2>
@@ -32,8 +34,8 @@
                     <textarea name="description" class="textarea" placeholder="Add a description to your Ad (Optional)"></textarea>
                     <label>Add a Picture (optional)</label><br>
                     <input type="file" name="file" accept="image/*">
-                    <input name="price" class="input" type="number" placeholder="Product Price" required>
-                    <button class="button sell is-primary is-pulled-right" disabled>Look for</button>
+                    <input name="price" class="input" type="number" min="1" max="1000000" pattern="^[0-9]+" placeholder="Product Price" required>
+                    <button class="button sell is-primary mt-2 is-pulled-right" disabled>Look for</button>
                 </form>
             </div>
         </div>

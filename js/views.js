@@ -29,7 +29,6 @@ export const spotView = (spot) => {
       <div class="ad-price">
         <p>${spot.price} €</p> 
     </div>
-    <br>
         ${deleteButtonHTML}
         </div>
         `;
