@@ -1,0 +1,171 @@
+{
+  "spots": [
+    {
+      "productName": "Walking Stick",
+      "description": "When 900 years old you reach, look as good, you will not",
+      "price": "5",
+      "status": "Looking For",
+      "image": "http://127.0.0.1:8000//file-1614533244731.png",
+      "userId": 7,
+      "updatedAt": "2021-02-28T17:27:24.744Z",
+      "id": 1
+    },
+    {
+      "productName": "Red Arm",
+      "description": "It is I, C-3PO. You probably don't recognize me because of the red arm. That's why I'm selling it, nobody seems to recognize me now",
+      "price": "250",
+      "status": "On sale",
+      "image": "http://127.0.0.1:8000//file-1614533646389.jpg",
+      "userId": 6,
+      "updatedAt": "2021-02-28T17:34:06.402Z",
+      "id": 2
+    },
+    {
+      "productName": "The Senate",
+      "description": "I´m the Senate... so I dont need this one",
+      "price": "1000000",
+      "status": "On sale",
+      "image": "http://127.0.0.1:8000//file-1614533770241.jpeg",
+      "userId": 8,
+      "updatedAt": "2021-02-28T17:36:10.252Z",
+      "id": 3
+    },
+    {
+      "productName": "Bowcaster",
+      "description": "WWWWWWWGGGGHHHRRRRW GGGWARRRHHWWWW RRWWWGG",
+      "price": "400",
+      "status": "On sale",
+      "image": "http://127.0.0.1:8000//file-1614533909047.jpg",
+      "userId": 4,
+      "updatedAt": "2021-02-28T17:38:29.056Z",
+      "id": 4
+    },
+    {
+      "productName": "Dark Saber",
+      "description": "I need it to rule mandalore",
+      "price": "560",
+      "status": "Looking For",
+      "image": "http://127.0.0.1:8000//file-1614534037901.jpg",
+      "userId": 9,
+      "updatedAt": "2021-02-28T17:40:37.910Z",
+      "id": 5
+    },
+    {
+      "productName": "Stormtrooper Armor",
+      "description": "Only used once on the first death star.\nCompany Limited Series 501",
+      "price": "99",
+      "status": "On sale",
+      "image": "http://127.0.0.1:8000//file-1614534351903.jpg",
+      "userId": 1,
+      "updatedAt": "2021-02-28T17:45:51.913Z",
+      "id": 6
+    },
+    {
+      "productName": "Hight ground",
+      "description": "This time Obi-Wan won't be able to win me and my new powers that will bring balance to my new empire",
+      "price": "500",
+      "status": "Looking For",
+      "image": null,
+      "userId": 2,
+      "updatedAt": "2021-02-28T17:49:05.229Z",
+      "id": 7
+    },
+    {
+      "productName": "Blaster DL-44",
+      "description": "Hokey religions and ancient weapons are no match for a good blaster at your side, kid",
+      "price": "9000",
+      "status": "On sale",
+      "image": "http://127.0.0.1:8000//file-1614534709438.jpg",
+      "userId": 5,
+      "updatedAt": "2021-02-28T17:51:49.449Z",
+      "id": 8
+    },
+    {
+      "productName": "Hairspray",
+      "description": "Help me, Hairspray. You’re my only hope.",
+      "price": "10",
+      "status": "Looking For",
+      "image": "http://127.0.0.1:8000//file-1614534862994.jpg",
+      "userId": 3,
+      "updatedAt": "2021-02-28T17:54:23.004Z",
+      "id": 9
+    },
+    {
+      "productName": "Light Saber",
+      "description": "Now I have a cooler red one",
+      "price": "66",
+      "status": "On sale",
+      "image": "http://127.0.0.1:8000//file-1614534977558.jpg",
+      "userId": 2,
+      "updatedAt": "2021-02-28T17:56:17.569Z",
+      "id": 10
+    },
+    {
+      "productName": "Beskar",
+      "description": "This is the Way",
+      "price": "5000",
+      "status": "Looking For",
+      "image": "http://127.0.0.1:8000//file-1614535231215.jpg",
+      "userId": 11,
+      "updatedAt": "2021-02-28T18:00:31.225Z",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "luke@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 2,
+      "username": "anakin@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 3,
+      "username": "leia@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 4,
+      "username": "chewe@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 5,
+      "username": "han@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 6,
+      "username": "c3po@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 7,
+      "username": "yoda@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 8,
+      "username": "papatine@starwars.com",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 9,
+      "username": "Bo-KatanKryze@starwars.com",
+      "password": "$2b$10$GyarejZrcK4/A54R/cFRtextW/seSpVIkFYjO2ggMbPePQaWe9g1G"
+    },
+    {
+      "username": "bobafett@starwars.com",
+      "password": "$2b$10$tQqGMtn264afiHPdKFPLQ./7l24m4PXl4RGDUYTSmClQsHi0GqQRq",
+      "id": 10
+    },
+    {
+      "username": "dindjarin@starwars.com",
+      "password": "$2b$10$vR2QLUok0SDn4Ep/Meyvtui66DiGprStztwXvj9l773PwBoydIpv6",
+      "id": 11
+    }
+  ]
+}

@@ -47,7 +47,7 @@ export const spotView = (spot) => {
   }
 
 export const feedbackView = () => {
-  return `<div class="columns is-mobile is-centered">
+  return `<div class="columns mt-2 is-mobile is-centered">
   <div class="column is-two-fifths">
   <div class="card">
     <div class="card-image">
