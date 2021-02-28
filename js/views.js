@@ -1,7 +1,7 @@
 export const spotView = (spot) => {
   let deleteButtonHTML = '';
   if (spot.canBeDeleted) {
-    deleteButtonHTML = '<button class="button is-fullwidth">BORRAR</button>';
+    deleteButtonHTML = '<button class="button is-fullwidth">DELETE</button>';
   }
 
   let imgHTML = '<img src="../img/noimg.png" alt="No image"></img>';

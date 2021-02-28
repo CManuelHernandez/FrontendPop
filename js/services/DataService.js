@@ -2,13 +2,16 @@
 const BASE_URL = 'http://127.0.0.1:8000';
 const TOKEN_KEY = 'token';
 
-// OJO: En los servicios no utilizar arrow functions al definir sus métodos
+// NOTE: In services do not use arrow functions when defining their methods
 
 export default {
 
-    getSpots: async function() {
+    getSpots: async function(query=null) {
         const currentUser = await this.getUser();
-        let url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;       
+        let url = `${BASE_URL}/api/spots?_expand=user&_sort=id&_order=desc`;
+        if (query) {
+            url += `&q=${query}`
+        }     
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
@@ -128,9 +131,9 @@ export default {
             if (tokenParts.length !== 3) {
                 return null;
             }
-            const payload = tokenParts[1]; // cogemos el payload, codificado en base64
-            const jsonStr = atob(payload); // descodificamos el base64
-            const { userId, username } = JSON.parse(jsonStr); // parseamos el JSON del token descodificado
+            const payload = tokenParts[1]; // take the payload, encoded in base64
+            const jsonStr = atob(payload); // decode the base64
+            const { userId, username } = JSON.parse(jsonStr); // parse the JSON of the decoded token
             return { userId, username };
         } catch (error) {
             return null;

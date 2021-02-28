@@ -8,7 +8,8 @@ export default class BaseController {
         this.events = {
             START_LOADING: 'startLoading',
             FINISH_LOADING: 'finishLoading',
-            ERROR: 'error'
+            ERROR: 'error',
+            SEARCH: 'search'
         };
     }
 

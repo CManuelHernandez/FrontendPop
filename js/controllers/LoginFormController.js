@@ -9,7 +9,7 @@ export default class LoginFormController extends BaseController {
 
   attachEventListener() {
     this.element.addEventListener("submit", async (event) => {
-      event.preventDefault(); // evita que se enví el formulario (comportamiento por defecto)
+      event.preventDefault(); 
       const user = {
         username: this.element.elements.email.value,
         password: this.element.elements.password.value,
@@ -19,7 +19,7 @@ export default class LoginFormController extends BaseController {
         const data = await dataService.login(user);
         dataService.saveToken(data.accessToken);
         let next = '/';
-        const queryParams = window.location.search.replace('?', '');  // ?next=otrapagina -> next=otrapagina
+        const queryParams = window.location.search.replace('?', '');
         const queryParamsParts = queryParams.split('=');
         if (queryParamsParts.length >= 2 && queryParamsParts[0] === 'next') {
           next = queryParamsParts[1];

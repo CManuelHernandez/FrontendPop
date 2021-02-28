@@ -1,7 +1,8 @@
 import SpotsListController from './controllers/SpotsListController.js';
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
-import NewSpotOrLoginController from './controllers/NewSpotOrLoginController.js'
+import NewSpotOrLoginController from './controllers/NewSpotOrLoginController.js';
+import SearchController from './controllers/SearchController.js';
 
 window.addEventListener("DOMContentLoaded", async (event) => {
   const loader = document.querySelector(".lds-ring");
@@ -16,5 +17,8 @@ window.addEventListener("DOMContentLoaded", async (event) => {
 
   const newSpotButtons = document.querySelector('.new-spot');
   new NewSpotOrLoginController(newSpotButtons);
+
+  const searchInput = document.querySelector('input[type="search"]');
+  new SearchController(searchInput);
 
 });
