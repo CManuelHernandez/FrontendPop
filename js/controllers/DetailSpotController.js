@@ -1,6 +1,6 @@
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
-import { spotView, feedbackView, noSpotView } from '../views.js';
+import { spotView, feedbackView, noWorkingView } from '../views.js';
 
 export default class DetailSpotController extends BaseController {
     constructor(element) {
@@ -45,10 +45,8 @@ export default class DetailSpotController extends BaseController {
             const product = await dataService.getSpot();
             this.render(product);
         } catch (error) {
-            const article = document.querySelector('.nada');
-            article.innerHTML = noSpotView();
-            console.log(article);
-            console.log('Entrnado por aqui');
+            const article = document.querySelector('.container');
+            article.innerHTML = noWorkingView();
             this.publish(this.events.ERROR, error);
         } finally {
             this.publish(this.events.FINISH_LOADING, {});

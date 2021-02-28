@@ -78,16 +78,23 @@ export const noSpotsView = () => {
     <div class="card-content">
   </div>
   </div>
+  </div>
   </div>`
 }
-
-export const noSpotView = () => {
-  return `<div class="card-content">
-  <div class="columns is-mobile is-centered">
-    <div class="content">
-      <p>Spot not found</p>
-      <a href="/index.html"><button class="button is-success">Back to start</button></a>
+export const noWorkingView = () => {
+    return `<div class="card-content">
+    <div class="columns is-mobile is-centered">
+      <div class="content">
+      <div class="card-image">
+      <figure class="image is-4by3">
+      <img src="../img/sorryDooku.gif">
+      </figure>
+    </div>
+    <div class="card-content">
+    <div class="content has-text-centered is-size-4">
+    <p>An error has occurred please try again later</p>
+    </div>     
+     </div>
    </div>
- </div>
-</div>` 
+  </div>`
 }

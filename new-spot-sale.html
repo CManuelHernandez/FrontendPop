@@ -16,17 +16,15 @@
     
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <img src="/img/logoFrontendPop.png" width="112" height="28">
-            <div class="basic">
-                <a href="/index.html" class="button is-primary">Back to main page</a> 
-            </div> 
+            <a href="/index.html"><img src="/img/logoFrontendPop.png" width="112" height="28"></a>
+            <a href="/index.html"><button class="button is-primary mt-1 is-outlined">Main page</button></a>
         </div>    
     </nav>
 
     <div class="container">
-        <div class="columns">
+        <div class="columns m-4">
             <div class="column is-two-thirds">
-                <h1 class="title">Creating a new Spot</h1>
+                <h1 class="title">Creating a New Spot</h1>
                 <h2 class="subtitle">For Selling Purposes</h2>
                 <form class="sale"> 
                     <input name="productName" class="input name" type="text" placeholder="Product Name" required>
@@ -35,7 +33,7 @@
                     <label>Add a Picture (optional)</label><br>
                     <input type="file" name="file" accept="image/*">
                     <input name="price" class="input" type="number" placeholder="Product Price" required>
-                    <button class="button sell is-primary is-pulled-right" disabled>Put on sale</button>
+                    <button class="button sell is-primary mt-2 is-pulled-right" disabled>Put on sale</button>
                 </form>
             </div>
         </div>

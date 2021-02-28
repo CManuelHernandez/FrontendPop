@@ -1,6 +1,6 @@
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
-import { spotView, noSpotsView } from '../views.js';
+import { spotView, noSpotsView, noWorkingView } from '../views.js';
 
 export default class PostsListController extends BaseController {
 
@@ -42,7 +42,8 @@ export default class PostsListController extends BaseController {
             const spots = await dataService.getSpots();
             this.render(spots);
         } catch (error) {
-            console.error(error);
+            const article = document.querySelector('.container');
+            article.innerHTML = noWorkingView();
             this.publish(this.events.ERROR, error);
         } finally {
             // this always runs when it works or it dosent
