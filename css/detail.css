@@ -1,0 +1,21 @@
+body {
+    width: 100vw;
+    height: 100vw;
+}
+.ad {
+    max-width: 90%;
+}
+.ad-data{
+  flex-direction: row;
+}
+.ad-info {
+    margin-left: 1rem;
+}
+.ad-image img{
+  width: 100wv;
+  height: 100wv;
+}
+.ad-main-info p {
+  margin-left:0.10rem;
+  margin: 0.40rem;
+}
