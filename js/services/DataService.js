@@ -15,6 +15,10 @@ export default {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
+            data.forEach( data => {
+                data.productName = data.productName.replace(/(<([^>]+)>)/gi, "")
+                data.description = data.description.replace(/(<([^>]+)>)/gi, "")
+            });                     
             return data;
         } else {
             throw new Error(`HTTP Error: ${response.status}`)
@@ -148,7 +152,7 @@ export default {
     spotData: async function(data, currentUser){
         return {
             id: data.id,
-            productName: data.productName,
+            productName: data.productName.replace(/(<([^>]+)>)/gi, ""),
             description: data.description.replace(/(<([^>]+)>)/gi, ""),
             price: data.price,
             status: data.status,
