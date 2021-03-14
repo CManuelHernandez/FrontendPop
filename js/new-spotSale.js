@@ -1,7 +1,7 @@
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
 import NewSpotSaleFormController from './controllers/NewSpotSaleFormController.js';
-import NewSpotPurchaseFormController from './controllers/NewSpotPurchaseFormController.js'
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
