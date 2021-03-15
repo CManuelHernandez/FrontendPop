@@ -13,7 +13,6 @@ export default class FormController extends BaseController {
 
     async checkIfUserIsLogged() {
         const userIsLogged = await dataService.isUserLogged();
-        console.log(window.location.href); 
         const salePage = 'http://localhost:3000/new-spot-sale.html';
         const purchasePage = 'http://localhost:3000/new-spot-purchase.html';
         if (!userIsLogged && window.location.href === salePage ){
