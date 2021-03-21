@@ -18,6 +18,7 @@ export default {
             data.forEach( data => {
                 data.productName = data.productName.replace(/(<([^>]+)>)/gi, "")
                 data.description = data.description.replace(/(<([^>]+)>)/gi, "")
+                data.price = data.price.replace(/(<([^>]+)>)/gi, "")
             });                     
             return data;
         } else {
@@ -154,7 +155,7 @@ export default {
             id: data.id,
             productName: data.productName.replace(/(<([^>]+)>)/gi, ""),
             description: data.description.replace(/(<([^>]+)>)/gi, ""),
-            price: data.price,
+            price: data.price.replace(/(<([^>]+)>)/gi, ""),
             status: data.status,
             date: data.createdAt || data.updatedAt,
             author: data.username || 'Desconocido',
